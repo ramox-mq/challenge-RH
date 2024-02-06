@@ -26,10 +26,10 @@ module.exports = (sequelize, dataTypes) => {
         telefono: {
             type: dataTypes.INTEGER,
         },
-        linkedinUrl: {
+        linkedin_url: {
             type: dataTypes.STRING(255),
         },
-        fecNac: {
+        fec_nac: {
             type: dataTypes.DATE,
         },
         sexo: {
@@ -38,7 +38,7 @@ module.exports = (sequelize, dataTypes) => {
         imagen: {
             type: dataTypes.STRING(20),
         },
-        idProfesion: {
+        id_profesion: {
             type: dataTypes.INTEGER,
         }
     };
@@ -48,6 +48,13 @@ module.exports = (sequelize, dataTypes) => {
     }
     
     const Aspirante = sequelize.define(alias, cols, config);
+
+    Aspirante.associate = function(models) {
+        Aspirante.belongsTo(models.Profesiones, {
+            as: "profesiones",
+            foreignKey: "id_profesion",
+        })
+    }
 
     return Aspirante;
 }

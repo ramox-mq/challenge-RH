@@ -1,6 +1,18 @@
+const {Aspirantes} = require('../database/models');
+
 const controller = {
-    list: (req, res) => {
-        res.send('funciona bien... pero falta conexion a base de datos');
+    list: async (req, res) => {
+        let aspirantes = await Aspirantes.findAll();
+        let resultado = {
+            meta: {
+                status: 200,
+                total: aspirantes.length,
+                url: '/api/aspirantes',
+            },
+            data: aspirantes,
+        }
+
+        res.json(resultado)
     }
 }
 
