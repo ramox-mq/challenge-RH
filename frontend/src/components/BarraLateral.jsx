@@ -3,7 +3,7 @@ function BarraLateral() {
         <header className="menu-wrap">
             <figure className="user">
                 <div className="user-avatar">
-                    <img src="../../public/images/logo-dh.png" alt="Logo Digital House	" />
+                    <img src="/images/logo-dh.png" alt="Logo Digital House	" />
                 </div>
                 <figcaption>Digital House</figcaption>
             </figure>
