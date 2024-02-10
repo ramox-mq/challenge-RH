@@ -1,4 +1,4 @@
-import SeccionAcceso from "../SeccionAcceso";
+import SeccionAcceso from "./SeccionAcceso";
 import BarraLateral from "./BarraLateral";
 import BusquedaSeleccion from "./BusquedaSeleccion";
 
